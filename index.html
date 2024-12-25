@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crocodile Facts</title>
+    <title>Crocodile Facts Generator</title>
     <style>
         :root {
-            --background-color: #f4f4f9;
-            --text-color: #333;
-            --card-background: #fff;
+            --background-color: #e0f7fa;
+            --text-color: #00695c;
+            --button-color: #00796b;
+            --button-hover-color: #004d40;
+            --card-background: #ffffff;
             --card-shadow: rgba(0, 0, 0, 0.1);
             --font-family: 'Arial', sans-serif;
             --padding: 20px;
             --margin: 10px;
-            --border-radius: 5px;
+            --border-radius: 8px;
         }
 
         body {
@@ -47,16 +49,39 @@
             border-radius: var(--border-radius);
             box-shadow: 0 0 10px var(--card-shadow);
             transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
         }
 
         li:hover {
             transform: translateY(-5px);
             box-shadow: 0 4px 15px var(--card-shadow);
         }
+
+        li::before {
+            content: "🐊";
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: var(--button-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--button-hover-color);
+        }
     </style>
 </head>
 <body>
     <h1>Fun Facts About Crocodiles</h1>
+    <button onclick="generateFact()">Generate Fact</button>
     <ul id="facts-list"></ul>
     <script>
         const facts = [
@@ -72,16 +97,14 @@
             "Diverse Diet: While they primarily eat fish and mammals, crocodiles are opportunistic feeders and will eat almost anything they can catch, including birds, reptiles, and even fruit."
         ];
 
-        function displayFacts() {
+        function generateFact() {
             const factsList = document.getElementById('facts-list');
-            facts.forEach(fact => {
-                const li = document.createElement('li');
-                li.textContent = fact;
-                factsList.appendChild(li);
-            });
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const fact = facts[randomIndex];
+            const li = document.createElement('li');
+            li.textContent = fact;
+            factsList.appendChild(li);
         }
-
-        document.addEventListener('DOMContentLoaded', displayFacts);
     </script>
 </body>
 </html>
