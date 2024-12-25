@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocodile Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Fun Facts About Crocodiles</h1>
+    <ul id="facts-list"></ul>
+    <script>
+        const facts = [
+            "Ancient Survivors: Crocodiles have been around for about 200 million years, making them one of the oldest living reptiles, surviving the extinction event that wiped out the dinosaurs.",
+            "Powerful Bite: Crocodiles have one of the strongest bites in the animal kingdom. Their bite force can reach up to 3,700 pounds per square inch (psi).",
+            "Ambush Predators: Crocodiles are excellent hunters. They often lie in wait, partially submerged in water, and ambush their prey with a sudden burst of speed.",
+            "Temperature-Dependent Sex Determination: The sex of crocodile hatchlings is determined by the temperature of the nest. Warmer temperatures tend to produce males, while cooler temperatures produce females.",
+            "Efficient Swimmers: Crocodiles can swim at speeds of up to 20 miles per hour (32 kilometers per hour) by using their powerful tails.",
+            "Long Lifespan: Crocodiles can live for a long time, with some species living up to 70 years or more in the wild.",
+            "Social Creatures: Despite their reputation, crocodiles can be quite social. They communicate with each other through vocalizations, body postures, and even by blowing bubbles.",
+            "Unique Heart: Crocodiles have a four-chambered heart, similar to birds and mammals, which allows them to efficiently oxygenate their blood.",
+            "Parental Care: Female crocodiles are attentive mothers. They guard their nests and help their hatchlings reach the water after they emerge from the eggs.",
+            "Diverse Diet: While they primarily eat fish and mammals, crocodiles are opportunistic feeders and will eat almost anything they can catch, including birds, reptiles, and even fruit."
+        ];
+
+        function displayFacts() {
+            const factsList = document.getElementById('facts-list');
+            facts.forEach(fact => {
+                const li = document.createElement('li');
+                li.textContent = fact;
+                factsList.appendChild(li);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', displayFacts);
+    </script>
+</body>
+</html>
